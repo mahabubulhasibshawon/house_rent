@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:house_rental/view/login_view.dart';
 import 'package:house_rental/view/onboarding_view.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: OnboardingView(),
+      home: LoginView(),
     );
   }
 }
