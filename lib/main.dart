@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:house_rental/cubit/category_cubit.dart';
+import 'package:house_rental/view/home_view.dart';
 import 'package:house_rental/view/login_view.dart';
 import 'package:house_rental/view/onboarding_view.dart';
 
@@ -16,7 +19,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: LoginView(),
+      home: BlocProvider(
+        create: (context) => CategoryCubit(),
+        child: HomeView(),
+      ),
     );
   }
 }
