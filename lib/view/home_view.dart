@@ -24,12 +24,18 @@ class HomeView extends StatelessWidget {
             height: 60,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-                itemCount: categories.length,
-                itemBuilder: (context, index) {
-              final cat = categories[index];
-              return CategoryBtnWidget(isSelected: index == selectedCategory, btn_name: Text(cat['label']), btn_icon: cat['icon']);
-            }),
-          )
+              itemCount: categories.length,
+              itemBuilder: (context, index) {
+                final cat = categories[index];
+                return CategoryBtnWidget(
+                  isSelected: index == selectedCategory,
+                  btn_name: cat['label'],
+                  btn_icon: cat['icon'],
+                  onTap: () => context.read<CategoryCubit>().selectCategory(index),
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
